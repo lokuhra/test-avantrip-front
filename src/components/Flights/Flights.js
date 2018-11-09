@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FaPlane } from 'react-icons/fa';
+import React from "react";
+import styled from "styled-components";
+import { FaPlane } from "react-icons/fa";
 
 const Card = styled.div`
-margin-top: 0.75rem;
+  margin-top: 0.75rem;
   height: 75%;
   width: 40vh;
   border-radius: 4px;
@@ -37,9 +37,14 @@ const Column = styled.div`
   padding: 0.25em 0.375em;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 35%;
   height: 100%;
 `;
+
+const ColumnLeft = styled(Column)`
+  width: 65%;
+`;
+
 const StopText = styled.p`
   font-size: 0.56rem;
   margin: 0;
@@ -71,17 +76,17 @@ const Icon = styled(FaPlane)`
   margin-right: 0.25em;
 `;
 
-export default ({img, stop, days, price}) => (
+export default ({ img, stop, days, price }) => (
   <Card>
     <Img src={img} />
     <Content>
-      <Column>
+      <ColumnLeft>
         <StopText>
           <Icon />
           {stop}
         </StopText>
         <RedText>{days}</RedText>
-      </Column>
+      </ColumnLeft>
       <Column>
         <SubTitle>Precio desde</SubTitle>
         <PriceText>{price}</PriceText>

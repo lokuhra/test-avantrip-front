@@ -1,11 +1,25 @@
 import React, { Fragment } from 'react';
+import Loadable from 'react-loadable';
 import Helmet from './Helmet';
 import Container from './Container';
-import Nav from '../Nav';
-import Banner from '../Banner';
-import Flights from '../Flights';
+import Loading from '../Loading';
 import MobxProvider from '../MobxProvider';
 import ApolloProvider from '../ApolloProvider';
+
+const Nav = Loadable({
+  loader: () => import('../Nav'),
+  loading: Loading,
+});
+
+const Banner = Loadable({
+  loader: () => import('../Banner'),
+  loading: Loading,
+});
+
+const Flights = Loadable({
+  loader: () => import('../Flights'),
+  loading: Loading,
+});
 
 export default () => (
   <Fragment>
